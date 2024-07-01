@@ -74,17 +74,15 @@ El frontend está diseñado para interactuar con la API del backend a través de
 
 ### Configuración de la Base de Datos
 
-1. Crear una base de datos en MySQL:
-   ```sql
-   CREATE DATABASE recursos_humanos;
-   ```
-
-2. Configurar las credenciales de la base de datos en `application.properties`:
+Configurar las credenciales de la base de datos en `application.properties`:
    ```properties
-   spring.datasource.url=jdbc:mysql://localhost:3306/recursos_humanos
-   spring.datasource.username=tu_usuario
-   spring.datasource.password=tu_contraseña
-   spring.jpa.hibernate.ddl-auto=update
+    spring.datasource.url=jdbc:mysql://localhost:3306/recursos_humanos_db?createDatabaseIfNotExist=true
+    spring.datasource.username=root
+    spring.datasource.password=admin
+    spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+    spring.jpa.hibernate.ddl-auto=update
+    spring.jpa.show-sql=true
+    spring.main.banner-mode=off
    ```
 
 ### Construir y Ejecutar el Proyecto
